@@ -151,7 +151,7 @@ The following example command creates the default /data/db directory:
 
 ```
 mkdir -p /data/db
-``
+```
 
 - **2 - Set permissions for the data directory**
 
