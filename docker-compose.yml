@@ -1,0 +1,23 @@
+version: '2'
+services:
+  api:
+    image: node:7.9.0-alpine
+    volumes:
+      - .:/app
+      - api-data:/app/node_modules
+    environment:
+      PORT: 3000
+      DATABASE: mongodb://mongodb/fishdb
+    depends_on:
+      - mongodb
+    ports:
+      - '5000:3000'
+    working_dir: /app
+    command: 'npm start'
+
+  mongodb:
+    image: mongo:3.4.4
+
+volumes:
+  api-data:
+    driver: local

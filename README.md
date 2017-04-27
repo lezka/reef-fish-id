@@ -189,7 +189,7 @@ mongod --dbpath <path to data directory>
 
 ### Finally run the server
 
-On your terminal, run npm run start 
+On your terminal, run npm run start
 
 ```
 npm run start
@@ -201,4 +201,23 @@ this will start the server and then you will see:
 Fish Id Database RESTful API server started on: 3000
 ```
 
+## Run the project with DOCKER
+
+### Install docker & docker-compose
+
+```
+brew install docker docker-compose
+```
+
+### Install node packages
+
+```
+docker-compose run --rm app npm install
+```
+
+### Run the project
+
+```
+docker-compose up app
+```
 
