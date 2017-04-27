@@ -1,12 +1,15 @@
 var express = require('express'),
   app = express(),
-  port = process.env.PORT || 3000,
+  default_port = 3000,
+  port = process.env.PORT || default_port,
+  default_database = 'mongodb://localhost/Fishdb',
+  database = process.env.DATABASE || default_database,
   mongoose = require('mongoose'),
   Task = require('./api/models/fishModel'),
   bodyParser = require('body-parser');
-  
+
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/Fishdb'); 
+mongoose.connect(database);
 
 
 app.use(bodyParser.urlencoded({ extended: true }));
